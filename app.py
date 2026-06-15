@@ -12,48 +12,26 @@ def index():
 
     if request.method == 'POST':
 
-        # Coleta os dados do formulário
-        idade       = int(request.form.get("age"))
-        Medu        = int(request.form.get("Medu"))
-        Fedu        = int(request.form.get("Fedu"))
-        traveltime  = int(request.form.get("traveltime"))
-        studytime   = int(request.form.get("studytime"))
-        failures    = int(request.form.get("failures"))
-        famrel      = int(request.form.get("famrel"))
-        freetime    = int(request.form.get("freetime"))
-        goout       = int(request.form.get("goout"))
-        Dalc        = int(request.form.get("Dalc"))
-        Walc        = int(request.form.get("Walc"))
-        health      = int(request.form.get("health"))
-        absences    = int(request.form.get("absences"))
-        schoolsup   = int(request.form.get("schoolsup"))
-        famsup      = int(request.form.get("famsup"))
-        paid        = int(request.form.get("paid"))
-        activities  = int(request.form.get("activities"))
-        nursery     = int(request.form.get("nursery"))
-        higher      = int(request.form.get("higher"))
-        internet    = int(request.form.get("internet"))
-        romantic    = int(request.form.get("romantic"))
+        absences = int(request.form.get("absences"))
+        failures = int(request.form.get("failures"))
+        goout    = int(request.form.get("goout"))
+        age      = int(request.form.get("age"))
+        health   = int(request.form.get("health"))
+        freetime = int(request.form.get("freetime"))
 
-        # Faz a predição
-        resultado = prever_aprovacao(
-            idade, Medu, Fedu, traveltime, studytime, failures,
-            famrel, freetime, goout, Dalc, Walc, health, absences,
-            schoolsup, famsup, paid, activities, nursery, higher,
-            internet, romantic
-        )
+        resultado = prever_aprovacao(absences, failures, goout, age, health, freetime)
 
-        # Gráfico de barras com as variáveis mais relevantes enviadas
+        # Gráfico com os dados do aluno
         dados = pd.DataFrame({
-            'Variável': ['Reprovações', 'Tempo de Estudo', 'Faltas', 'Álcool (semana)', 'Saídas'],
-            'Valor': [failures, studytime, absences, Walc, goout]
+            'Variável': ['Faltas', 'Reprovações', 'Saídas', 'Idade', 'Saúde', 'Tempo Livre'],
+            'Valor':    [absences,  failures,      goout,    age,     health,   freetime]
         })
 
         figura = px.bar(
             dados,
             x='Variável',
             y='Valor',
-            title='Resumo das Variáveis do Aluno',
+            title='Perfil do Aluno',
             color='Variável'
         )
         grafico = pio.to_html(figura, full_html=False)

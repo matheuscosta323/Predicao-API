@@ -11,127 +11,16 @@
 
     <form action="/" method="POST">
 
-        <h3>📋 Dados Pessoais</h3>
+        <label for="absences">Número de faltas:</label>
+        <input type="number" id="absences" name="absences" min="0" max="93" required>
 
-        <label for="age">Idade:</label>
-        <input type="number" id="age" name="age" min="10" max="22" required>
-
-        <label for="Medu">Escolaridade da Mãe (0=nenhuma, 1=fundamental, 2=médio incompleto, 3=médio, 4=superior):</label>
-        <select id="Medu" name="Medu" required>
-            <option value="0">0 - Nenhuma</option>
-            <option value="1">1 - Ensino Fundamental</option>
-            <option value="2">2 - Médio Incompleto</option>
-            <option value="3">3 - Ensino Médio</option>
-            <option value="4">4 - Ensino Superior</option>
-        </select>
-
-        <label for="Fedu">Escolaridade do Pai (0=nenhuma, 1=fundamental, 2=médio incompleto, 3=médio, 4=superior):</label>
-        <select id="Fedu" name="Fedu" required>
-            <option value="0">0 - Nenhuma</option>
-            <option value="1">1 - Ensino Fundamental</option>
-            <option value="2">2 - Médio Incompleto</option>
-            <option value="3">3 - Ensino Médio</option>
-            <option value="4">4 - Ensino Superior</option>
-        </select>
-
-        <h3>📚 Dados Escolares</h3>
-
-        <label for="traveltime">Tempo de deslocamento até a escola (1=menos de 15min, 2=15-30min, 3=30min-1h, 4=mais de 1h):</label>
-        <select id="traveltime" name="traveltime" required>
-            <option value="1">1 - Menos de 15 min</option>
-            <option value="2">2 - 15 a 30 min</option>
-            <option value="3">3 - 30 min a 1 hora</option>
-            <option value="4">4 - Mais de 1 hora</option>
-        </select>
-
-        <label for="studytime">Tempo de estudo semanal (1=menos de 2h, 2=2-5h, 3=5-10h, 4=mais de 10h):</label>
-        <select id="studytime" name="studytime" required>
-            <option value="1">1 - Menos de 2 horas</option>
-            <option value="2">2 - 2 a 5 horas</option>
-            <option value="3">3 - 5 a 10 horas</option>
-            <option value="4">4 - Mais de 10 horas</option>
-        </select>
-
-        <label for="failures">Número de reprovações anteriores (0 a 4):</label>
+        <label for="failures">Número de reprovações anteriores:</label>
         <select id="failures" name="failures" required>
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-        </select>
-
-        <label for="absences">Número de faltas:</label>
-        <input type="number" id="absences" name="absences" min="0" max="93" required>
-
-        <label for="schoolsup">Recebe suporte educacional extra da escola?</label>
-        <select id="schoolsup" name="schoolsup" required>
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-
-        <label for="paid">Paga aulas extras na disciplina?</label>
-        <select id="paid" name="paid" required>
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-
-        <h3>👨‍👩‍👧 Dados Familiares</h3>
-
-        <label for="famsup">Recebe suporte educacional da família?</label>
-        <select id="famsup" name="famsup" required>
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-
-        <label for="famrel">Qualidade das relações familiares (1=muito ruim, 5=excelente):</label>
-        <select id="famrel" name="famrel" required>
-            <option value="1">1 - Muito Ruim</option>
-            <option value="2">2 - Ruim</option>
-            <option value="3">3 - Regular</option>
-            <option value="4">4 - Boa</option>
-            <option value="5">5 - Excelente</option>
-        </select>
-
-        <h3>🎮 Estilo de Vida</h3>
-
-        <label for="activities">Participa de atividades extracurriculares?</label>
-        <select id="activities" name="activities" required>
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-
-        <label for="nursery">Frequentou creche/pré-escola?</label>
-        <select id="nursery" name="nursery" required>
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-
-        <label for="higher">Deseja cursar ensino superior?</label>
-        <select id="higher" name="higher" required>
-            <option value="1">Sim</option>
-            <option value="0">Não</option>
-        </select>
-
-        <label for="internet">Tem acesso à internet em casa?</label>
-        <select id="internet" name="internet" required>
-            <option value="1">Sim</option>
-            <option value="0">Não</option>
-        </select>
-
-        <label for="romantic">Está em um relacionamento romântico?</label>
-        <select id="romantic" name="romantic" required>
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-
-        <label for="freetime">Tempo livre após a escola (1=muito pouco, 5=muito):</label>
-        <select id="freetime" name="freetime" required>
-            <option value="1">1 - Muito Pouco</option>
-            <option value="2">2 - Pouco</option>
-            <option value="3">3 - Regular</option>
-            <option value="4">4 - Bastante</option>
-            <option value="5">5 - Muito</option>
         </select>
 
         <label for="goout">Frequência de saídas com amigos (1=muito pouco, 5=muito):</label>
@@ -143,17 +32,11 @@
             <option value="5">5 - Muito</option>
         </select>
 
-        <label for="Dalc">Consumo de álcool em dias de semana (1=muito pouco, 5=muito):</label>
-        <select id="Dalc" name="Dalc" required>
-            <option value="1">1 - Muito Pouco</option>
-            <option value="2">2 - Pouco</option>
-            <option value="3">3 - Regular</option>
-            <option value="4">4 - Bastante</option>
-            <option value="5">5 - Muito</option>
-        </select>
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age" min="10" max="22" required>
 
-        <label for="Walc">Consumo de álcool no fim de semana (1=muito pouco, 5=muito):</label>
-        <select id="Walc" name="Walc" required>
+        <label for="freetime">Tempo livre após a escola (1=muito pouco, 5=muito):</label>
+        <select id="freetime" name="freetime" required>
             <option value="1">1 - Muito Pouco</option>
             <option value="2">2 - Pouco</option>
             <option value="3">3 - Regular</option>
